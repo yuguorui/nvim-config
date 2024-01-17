@@ -598,7 +598,7 @@ keyset("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions
 keyset("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands
-keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
+keyset("n", "<leader>p", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document
 keyset("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols
@@ -607,5 +607,3 @@ keyset("n", "<space>S", ":<C-u>CocList -I symbols<cr>", opts)
 keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 -- Do default action for previous item
 keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
--- Resume latest coc list
-keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
