@@ -532,6 +532,9 @@ keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 keyset("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)
 -- Remap keys for apply source code actions for current file.
 keyset("n", "<leader>as", "<Plug>(coc-codeaction-source)", opts)
+-- Run the Code Lens actions on the current line
+keyset("n", "<leader>al", "<Plug>(coc-codelens-action)", opts)
+
 -- Apply the most preferred quickfix action on the current line.
 keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
 
@@ -539,9 +542,6 @@ keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
 keyset("n", "<leader>re", "<Plug>(coc-codeaction-refactor)", { silent = true })
 keyset("x", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
 keyset("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
-
--- Run the Code Lens actions on the current line
-keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
 
 
 -- Map function and class text objects
