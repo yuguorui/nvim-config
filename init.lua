@@ -419,8 +419,6 @@ nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
 -- Global mappings.
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 local diffopened = false
@@ -466,8 +464,8 @@ keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
-keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
+keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", {silent = true})
+keyset("n", "]d", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- GoTo code navigation
 keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
