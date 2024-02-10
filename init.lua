@@ -301,22 +301,8 @@ require("lazy").setup({
         config = function(_, opts) require'lsp_signature'.setup(opts) end
     },
     {
-        'zbirenbaum/copilot.lua',
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                suggestion = {
-                    enabled = true,
-                    auto_trigger = true,
-                    keymap =  {
-                        accept = "<C-k>",
-                        next = "<M-]>",
-                        prev = "<M-[>",
-                        dismiss = "<C-]>",
-                    },
-                }
-            })
-        end,
+        'github/copilot.vim',
+        lazy = false
     },
 })
 
@@ -607,3 +593,9 @@ keyset("n", "<space>S", ":<C-u>CocList -I symbols<cr>", opts)
 keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 -- Do default action for previous item
 keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
+
+keyset('i', '<C-k>', 'copilot#Accept("\\<CR>")', {
+    expr = true,
+    replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
