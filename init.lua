@@ -130,21 +130,23 @@ require("lazy").setup({
             require'nvim-tree'.setup()
         end,
     },
-    -- {
-    --     'simrat39/symbols-outline.nvim',
-    --     keys = {
-    --         { "<leader>ts", ":SymbolsOutline<CR>", silent = true, noremap = true },
-    --     },
-    --     config = function()
-    --         require'symbols-outline'.setup()
-    --     end,
-    -- },
     {
-        'liuchengxu/vista.vim',
-        keys = {
-            { "<leader>ts", ":Vista!!<CR>", silent = true, noremap = true },
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        keys = { -- Example mapping to toggle outline
+            { "<leader>ts", "<cmd>Outline<CR>", desc = "Toggle outline" },
+        },
+        opts = {
+            -- Your setup opts here
         },
     },
+    -- {
+    --     'liuchengxu/vista.vim',
+    --     keys = {
+    --         { "<leader>ts", ":Vista!!<CR>", silent = true, noremap = true },
+    --     },
+    -- },
     'tpope/vim-sleuth',
     {
         'zivyangll/git-blame.vim',
