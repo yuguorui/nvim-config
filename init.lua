@@ -85,11 +85,11 @@ require("lazy").setup({
         'nvim-telescope/telescope.nvim',
         version = '0.1.5',
         keys = {
-            {"<leader>ff", ":Telescope find_files<CR>", silent = true, noremap = true,},
+            {"<leader>f", ":Telescope find_files<CR>", silent = true, noremap = true,},
             {"<leader>fg", ":Telescope live_grep<CR>", silent = true, noremap = true,},
             {"<leader>fs", ":lua telescope_grep_string()<CR>", silent = true, noremap = true,},
             {"<leader>fs", ":lua telescope_grep_string()<CR>", silent = true, noremap = true, mode = "v"},
-            {"<leader>fb", ":Telescope buffers<CR>", silent = true, noremap = true,},
+            {"<leader>b", ":Telescope buffers<CR>", silent = true, noremap = true,},
             {"<leader>fh", ":Telescope help_tags<CR>", silent = true, noremap = true,},
         },
         dependencies = {
@@ -395,7 +395,7 @@ nnoremap <silent><c-j> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><c-j> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 " git blame
-nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
+nnoremap ,b :<C-u>call gitblame#echo()<CR>
 ]])
 
 -- mini.map
@@ -407,8 +407,8 @@ nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 -- vim.api.nvim_create_user_command('MiniMapClose', 'lua MiniMap.close()', {})
 
 -- Global mappings.
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 local diffopened = false
 function diffview_toggle()
@@ -587,9 +587,9 @@ keyset("n", ",e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands
 keyset("n", "<leader>p", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document
-keyset("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
+keyset("n", "<leader>o", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols
-keyset("n", "<space>S", ":<C-u>CocList -I symbols<cr>", opts)
+keyset("n", "<leader>s", ":<C-u>CocList -I symbols<cr>", opts)
 -- Do default action for next item
 keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 -- Do default action for previous item
