@@ -342,7 +342,7 @@ function ToggleCopymode()
     endif
 endfunction
 
-nnoremap <silent> <Leader>c :call ToggleCopymode()<CR>
+nnoremap <silent> <Leader>uc :call ToggleCopymode()<CR>
 
 " switch the buffer
 nnoremap <silent>    <S-TAB> <Cmd>BufferPrevious<CR>
@@ -589,7 +589,7 @@ keyset("n", "<leader>p", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document
 keyset("n", "<leader>o", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols
-keyset("n", "<leader>s", ":<C-u>CocList -I symbols<cr>", opts)
+keyset("n", "cs", ":<C-u>CocList -I symbols<cr>", opts)
 -- Do default action for next item
 keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 -- Do default action for previous item
