@@ -157,16 +157,17 @@ require("lazy").setup({
         ft = { "rust" },
     },
     {
-        'romgrk/barbar.nvim',
+        'akinsho/bufferline.nvim', 
+        version = "*", 
+        dependencies = 'nvim-tree/nvim-web-devicons',
         event = "BufReadPost",
-        dependencies = {
-            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-        },
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = {
-            auto_hide = true,
-        },
-        version = '^1.0.0', -- optional: only update when a new 1.x version is released
+        config = function() 
+            require("bufferline").setup{
+                options = {
+                    always_show_bufferline = false,
+                },
+            }
+        end
     },
     {
         'akinsho/toggleterm.nvim',
@@ -366,25 +367,21 @@ endfunction
 nnoremap <silent> <Leader>uc :call ToggleCopymode()<CR>
 
 " switch the buffer
-nnoremap <silent>    <S-TAB> <Cmd>BufferPrevious<CR>
-nnoremap <silent>    <TAB> <Cmd>BufferNext<CR>
-nnoremap <silent>    <A-<> <Cmd>BufferMovePrevious<CR>
-nnoremap <silent>    <A->> <Cmd>BufferMoveNext<CR>
+nnoremap <silent>    <S-TAB> <Cmd>bprev<CR>
+nnoremap <silent>    <TAB> <Cmd>bnext<CR>
 
-nnoremap <silent>    <A-1> <Cmd>BufferGoto 1<CR>
-nnoremap <silent>    <A-2> <Cmd>BufferGoto 2<CR>
-nnoremap <silent>    <A-3> <Cmd>BufferGoto 3<CR>
-nnoremap <silent>    <A-4> <Cmd>BufferGoto 4<CR>
-nnoremap <silent>    <A-5> <Cmd>BufferGoto 5<CR>
-nnoremap <silent>    <A-6> <Cmd>BufferGoto 6<CR>
-nnoremap <silent>    <A-7> <Cmd>BufferGoto 7<CR>
-nnoremap <silent>    <A-8> <Cmd>BufferGoto 8<CR>
-nnoremap <silent>    <A-9> <Cmd>BufferGoto 9<CR>
-nnoremap <silent>    <A-0> <Cmd>BufferLast<CR>
+nnoremap <silent>    <A-1> <Cmd>b 1<CR>
+nnoremap <silent>    <A-2> <Cmd>b 2<CR>
+nnoremap <silent>    <A-3> <Cmd>b 3<CR>
+nnoremap <silent>    <A-4> <Cmd>b 4<CR>
+nnoremap <silent>    <A-5> <Cmd>b 5<CR>
+nnoremap <silent>    <A-6> <Cmd>b 6<CR>
+nnoremap <silent>    <A-7> <Cmd>b 7<CR>
+nnoremap <silent>    <A-8> <Cmd>b 8<CR>
+nnoremap <silent>    <A-9> <Cmd>b 9<CR>
+nnoremap <silent>    <A-`> <Cmd>b#<CR>
 
-nnoremap <silent>    <A-p> <Cmd>BufferPin<CR>
-nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
-nnoremap <silent>    <A-s-c> <Cmd>BufferRestore<CR>
+nnoremap <silent>    <A-c> <Cmd>bdelete<CR>
 
 " undo dir
 if !isdirectory("/tmp/nvim_bak")
