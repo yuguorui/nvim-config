@@ -192,7 +192,10 @@ require("lazy").setup({
         },
         ---@type TSConfig
         opts = {
-            highlight = { enable = true },
+            highlight = {
+                enable = true,
+                disable = { "lua", },
+            },
             indent = { enable = true },
             ensure_installed = {
                 "c",
@@ -234,6 +237,9 @@ require("lazy").setup({
                 max_lines = 5,
             }
         end,
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+	},
     },
 
     {
