@@ -326,6 +326,13 @@ require("lazy").setup({
             })
        end
     },
+    {
+        "shellRaining/hlchunk.nvim",
+        event = { "UIEnter" },
+        config = function()
+            require("hlchunk").setup({})
+        end
+    },
 })
 
 vim.cmd([[
@@ -342,11 +349,6 @@ augroup END
 
 " show signcolumn
 set signcolumn=yes:1
-
-" show tab
-set listchars=tab:\ \ ┊,extends:…,precedes:…
-set list
-" statue line
 
 function ToggleCopymode()
     if &signcolumn == 'yes:1'
