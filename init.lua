@@ -340,6 +340,15 @@ require("lazy").setup({
             require("hlchunk").setup({})
         end
     },
+    {
+        'renerocksai/telekasten.nvim',
+        dependencies = {'nvim-telescope/telescope.nvim'},
+        config = function()
+            require('telekasten').setup({
+                home = vim.fn.expand("~/notes"), -- Put the name of your notes directory here
+            })
+        end
+    },
 })
 
 vim.cmd([[
@@ -627,3 +636,6 @@ keyset('i', '<C-k>', 'copilot#Accept("\\<CR>")', {
 vim.g.copilot_no_tab_map = true
 vim.g.coc_snippet_next = '<TAB>'
 vim.g.coc_snippet_prev = '<S-TAB>'
+
+-- short cut for note taking
+keyset("n", "<leader>n", ":Telekasten<CR>", opts)
