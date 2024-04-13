@@ -232,11 +232,10 @@ require("lazy").setup({
     {
         'nvim-treesitter/nvim-treesitter-context',
         event = "VeryLazy",
-        config = function()
-            require('treesitter-context').setup{
+        opts = {
                 max_lines = 5,
-            }
-        end,
+                trim_scope = 'inner',
+        },
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 	},
