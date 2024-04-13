@@ -233,7 +233,7 @@ require("lazy").setup({
         'nvim-treesitter/nvim-treesitter-context',
         event = "VeryLazy",
         opts = {
-                max_lines = 5,
+                max_lines = 10,
                 trim_scope = 'inner',
         },
 	dependencies = {
