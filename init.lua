@@ -663,3 +663,6 @@ vim.g.coc_snippet_prev = '<S-TAB>'
 
 -- short cut for note taking
 keyset("n", "<leader>n", ":Telekasten<CR>", opts)
+
+-- markdown
+vim.g.markdown_fenced_languages = { "javascript", "bash", "diff", "go", "rust", "c" }
