@@ -314,6 +314,9 @@ require("lazy").setup({
         lazy = false
     },
     {
+        "mhinz/vim-startify",
+    },
+    {
         "pysan3/autosession.nvim", -- restore previous session
         event = { "VeryLazy" },                   -- OPTIONAL
         -- lazy = false,                          -- If you do not want to lazy load.
